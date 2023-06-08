@@ -10,7 +10,7 @@ WHERE directors.full_name = 'Фрэнсис Форд Коппола';
 
 -- 3. Вывести количество снятых фильмов за последние 20 лет
 SELECT COUNT(*) as 'Кол-во фильмов' FROM movies
-WHERE year BETWEEN 2003 AND 2023;
+WHERE year BETWEEN (YEAR(CURDATE()) - 20) AND YEAR(CURDATE());
 
 -- 4. Вывести все жанры фильмов в которых снимал Стивен Спилберг в течении всей своей карьеры
 SELECT DISTINCT genres.title FROM movies
